@@ -47,8 +47,8 @@ int max_route_dp(vector<vector<int>>& matrix, int n, int m, vector<vector<int>>&
 }
 
 int main() {
-    int n = 9;
-    int m = 9;
+    int n = 10;
+    int m = 10;
     vector<vector<int>> matrix(n, vector<int>(m, 0));
 
 
@@ -73,7 +73,7 @@ int main() {
     
     start = chrono::high_resolution_clock::now();
     int max_value = max_route(matrix, n-1, m-1);
-    cout << "\nMax value: " << max_value;
+    cout << "\nMax value (recursive solution): " << max_value;
     end = chrono::high_resolution_clock::now();
 
     elapsed = end - start;
@@ -81,7 +81,7 @@ int main() {
 
     start = chrono::high_resolution_clock::now();
     int max_value_dp = max_route_dp(matrix, n-1, m-1, checker, cache);
-    cout << "\nMax value (DP): " << max_value_dp;
+    cout << "\nMax value (recursive solution with DP): " << max_value_dp;
     end = chrono::high_resolution_clock::now();
 
     elapsed = end - start;
